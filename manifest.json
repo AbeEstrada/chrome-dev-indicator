@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Dev Indicator",
+  "description": "Identify with a cup of coffee ☕️ on the title if you have a document open using 'localhost/127.0.0.1' or '.dev' domain.",
+  "version": "1.0",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://*.dev/*", "*://localhost/*", "*://127.0.0.1/*" ],
+      "js": [ "content.js" ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
+}
