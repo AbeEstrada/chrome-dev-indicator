@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Dev Indicator",
-  "description": "Identify with a cup of coffee ☕️ on the title if you have a document open using 'localhost/127.0.0.1' or '.dev' domain.",
-  "version": "1.0",
+  "description": "Add an indicator to the title if you have a document open using `localhost/127.0.0.1` domain or `*.dev/*.local` TLD.",
+  "version": "1.1",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
@@ -13,13 +13,18 @@
   },
   "content_scripts": [
     {
-      "matches": [ "*://*.dev/*", "*://localhost/*", "*://127.0.0.1/*" ],
+      "matches": [ "*://localhost/*", "*://127.0.0.1/*", "*://*.dev/*", "*://*.local/*" ],
       "js": [ "content.js" ],
       "run_at": "document_end"
     }
   ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
   "permissions": [
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ]
 }

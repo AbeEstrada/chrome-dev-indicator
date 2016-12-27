@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Options</title>
+  <style>
+    #root {
+      font-size: 16px;
+    }
+    #root cite {
+      opacity: 0;
+      color: #919191;
+      font-size: 14px;
+      font-style: normal;
+      transition: opacity 500ms ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <p>
+      <label>Indicator:</label>
+      <input type="text" id="indicator" name="indicator">
+    </p>
+    <p>
+      <button id="save">Save</button>
+      <cite id="status">Options saved.</cite>
+    </p>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
