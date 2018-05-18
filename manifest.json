@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Dev Indicator",
   "description":
-    "Add an indicator to the title if you have a document open using `localhost/127.0.0.1` domain or `*.dev/*.local` TLD.",
+    "Add an indicator to the title if you have a document open using `localhost/127.0.0.1` domain or `*.test` TLD [RFC2606].",
   "version": "1.2",
   "icons": {
     "16": "icon.png",
@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://localhost/*", "*://127.0.0.1/*", "*://*.dev/*", "*://*.local/*"],
+      "matches": ["*://localhost/*", "*://127.0.0.1/*", "*://*.test/*"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
